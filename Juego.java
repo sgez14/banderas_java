@@ -2,8 +2,31 @@ import java.util.*
 import java.util.Arrays;
 
 public class Juego{
+	public static void imprimirFila(String fila[])
+	{
+		for (int i=0;i<fila.length;i++) {
+			
+	 		if(fila[i].equals("1"))
+	 		{
+	 			System.out.print(ConsoleColors.RED_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("2"))
+	 		{
+	 			System.out.print(ConsoleColors.BLUE_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("3"))
+	 		{
+	 			System.out.print(ConsoleColors.WHITE_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("4"))
+	 		{
+	 			System.out.print(ConsoleColors.YELLOW_BACKGROUND+"  ");
+	 		}		 		
+		}
+		System.out.println(ConsoleColors.RESET);
+	}
 	public static int[] desordenarArreglo(int[] array){
-		Random rgen = new Random();  // Random number generator			
+		Random rgen = new Random();  		
  
 		for (int i=0; i<array.length; i++) {
 		    int randomPosition = rgen.nextInt(array.length);
@@ -58,10 +81,15 @@ public class Juego{
 			centinela = ConsoleInput.getInt();
 			switch(centinela)
 			{
-				
+				case 1: System.out.println();
+						opcion_bandera = subMenuSeleccionBandera(indices);
+						imprimirGraficoBandera(banderas,indices[opcion_bandera]);	
 			}		
 
 		}while(centinela!=3);
 
+	}
+	public static void main(String args[]){
+		juego();
 	}
 }
