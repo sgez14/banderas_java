@@ -44,10 +44,24 @@ public class Juego{
 	}
 	public static void juego()
 	{
-		int puntaje = 0, opcion_bandera = 0;
+		int puntaje = 0, opcion_bandera = 0, centinela=0;
 		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 		int indices[] = crearIndices(banderas.length/20);
 		indices = desordenarArreglo(indices);
+		do
+		{
+			System.out.println();
+			System.out.println("Ingrese una opcion: ");
+			System.out.println("1. Jugar");
+			System.out.println("2. Ver creditos");
+			System.out.println("3. Salir");
+			centinela = ConsoleInput.getInt();
+			switch(centinela)
+			{
+				
+			}		
+
+		}while(centinela!=3);
 
 	}
 }
