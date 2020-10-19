@@ -1,5 +1,6 @@
-import java.util.*
+import java.util.*;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Juego{
 	public static void imprimirFila(String fila[])
@@ -25,18 +26,7 @@ public class Juego{
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
-	public static int[] desordenarArreglo(int[] array){
-		Random rgen = new Random();  		
- 
-		for (int i=0; i<array.length; i++) {
-		    int randomPosition = rgen.nextInt(array.length);
-		    int temp = array[i];
-		    array[i] = array[randomPosition];
-		    array[randomPosition] = temp;
-		}
- 
-		return array;
-	}
+	
 	public static void imprimirGraficoBandera(String[] banderas, int indice)
 	{
 		for (int i=indice;i<indice+20;i++ ) {
@@ -70,7 +60,6 @@ public class Juego{
 		int puntaje = 0, opcion_bandera = 0, centinela=0;
 		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 		int indices[] = crearIndices(banderas.length/20);
-		indices = desordenarArreglo(indices);
 		do
 		{
 			System.out.println();
@@ -81,9 +70,13 @@ public class Juego{
 			centinela = ConsoleInput.getInt();
 			switch(centinela)
 			{
-				case 1: System.out.println();
-						opcion_bandera = subMenuSeleccionBandera(indices);
-						imprimirGraficoBandera(banderas,indices[opcion_bandera]);	
+				case 1: while(puntaje<3)
+				{
+					System.out.println();
+					opcion_bandera = subMenuSeleccionBandera(indices);
+					imprimirGraficoBandera(banderas,indices[opcion_bandera]);
+				}
+							
 			}		
 
 		}while(centinela!=3);
