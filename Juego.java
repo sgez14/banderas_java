@@ -26,7 +26,7 @@ public class Juego{
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
-	
+
 	public static void imprimirGraficoBandera(String[] banderas, int indice)
 	{
 		for (int i=indice;i<indice+20;i++ ) {
@@ -44,6 +44,12 @@ public class Juego{
 		}while(opc<0 || opc==0 || opc>indices.length);
 
 		return opc-1;
+	}
+	public static int randomBandera(int[] indices)
+	{
+		int aleatorio = (int)Math.random()*indices.length;
+
+		return aleatorio;
 	}
 	public static int[] crearIndices(int total)
 	{
@@ -70,13 +76,9 @@ public class Juego{
 			centinela = ConsoleInput.getInt();
 			switch(centinela)
 			{
-				case 1: while(puntaje<3)
-				{
-					System.out.println();
-					opcion_bandera = subMenuSeleccionBandera(indices);
-					imprimirGraficoBandera(banderas,indices[opcion_bandera]);
-				}
-							
+				case 1: System.out.println();
+						opcion_bandera = randomBandera(); 		   					//selecciona un indice
+						imprimirGraficoBandera(banderas,indices[opcion_bandera]);	//Imprime el indice que está en opcion_bander																
 			}		
 
 		}while(centinela!=3);
