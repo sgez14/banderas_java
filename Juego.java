@@ -34,23 +34,6 @@ public class Juego{
 		}
 			
 	}
-	public static int subMenuSeleccionBandera(int[] indices)
-	{
-		int opc = 0;
-
-		do{
-			System.out.println("Ingrese un valor entre 1 y "+indices.length);
-			opc = ConsoleInput.getInt();
-		}while(opc<0 || opc==0 || opc>indices.length);
-
-		return opc-1;
-	}
-	public static int randomBandera(int[] indices)
-	{
-		int aleatorio = (int)Math.random()*indices.length;
-
-		return aleatorio;
-	}
 	public static int[] crearIndices(int total)
 	{
 		int indices[] = new int[total];
@@ -63,9 +46,13 @@ public class Juego{
 	}
 	public static void juego()
 	{
+
 		int puntaje = 0, opcion_bandera = 0, centinela=0;
 		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 		int indices[] = crearIndices(banderas.length/20);
+		Random indiceAleatorio = new Random();
+		int indice_bandera;
+
 		do
 		{
 			System.out.println();
@@ -74,11 +61,13 @@ public class Juego{
 			System.out.println("2. Ver creditos");
 			System.out.println("3. Salir");
 			centinela = ConsoleInput.getInt();
+
 			switch(centinela)
 			{
 				case 1: System.out.println();
-						opcion_bandera = randomBandera(); 		   					//selecciona un indice
-						imprimirGraficoBandera(banderas,indices[opcion_bandera]);	//Imprime el indice que está en opcion_bander																
+						indice_bandera = indiceAleatorio.nextInt(indices.length);
+						opcion_bandera = indice_bandera; 		   					
+						imprimirGraficoBandera(banderas,indices[opcion_bandera]);																
 			}		
 
 		}while(centinela!=3);
