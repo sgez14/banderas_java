@@ -133,6 +133,7 @@ public class Juego{
        	System.out.println(" $$ |  $$ |\\$$$$$$  |$$ | $$ | $$ |$$$$$$$  |\\$$$$$$$\\ $$ |       ");
        	System.out.println(" \\__|  \\__| \\______/ \\__| \\__| \\__|\\_______/  \\_______|\\__|       ");
 	}
+
 	public static void juego()
 	{
 		boolean control;
@@ -174,9 +175,24 @@ public class Juego{
 									{
 										System.out.println("Adivina 3 banderas para ganar");
 									}
-									menuSaludos(puntaje_juego);
+									menuSaludos(puntaje_juego);																											
 								}							
 							}
+							if(puntaje_juego==1)
+							{
+								System.out.println("Deseas seguir jugando hasta conseguir los 3 puntos?");
+								System.out.println("1. Si");
+								System.out.println("2. No");
+								String pregunta_usuario = ConsoleInput.getString();
+								if(pregunta_usuario.equalsIgnoreCase("No"))
+								{
+									break;
+								}
+								else
+								{
+									System.out.println();
+								}
+							}														
 						}
 						puntaje_juego=0;
 						break;
