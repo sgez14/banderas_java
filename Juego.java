@@ -26,7 +26,7 @@ public class Juego{
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
-	public static void juegoInformacionBandera(String[] banderas,int indice)
+	public static void juegoInformacionBandera(String[] banderas,int indice, int puntaje)
 	{
 		String fila[];
 		String respuesta = ConsoleInput.getString();
@@ -36,14 +36,16 @@ public class Juego{
 			{
 				fila = banderas[i].split(";");
 				fila[0].toString();
-				System.out.println(fila[0].toLowerCase());
+				
 				respuesta.toLowerCase();
 				if(respuesta.equalsIgnoreCase(fila[0]))
 				{
 					System.out.println("Bien");
+					puntaje++;
 				}else
 				{
 					System.out.println("Mal");
+					System.out.println("La respuesta es: " + fila[0].toLowerCase());
 				}	
 			}
 		}
@@ -97,7 +99,7 @@ public class Juego{
 							{
 								System.out.println();
 								System.out.println("Adivina la bandera");
-								juegoInformacionBandera(banderas,indices[opcion_bandera]);
+								juegoInformacionBandera(banderas,indices[opcion_bandera],puntaje);
 							}							
 						}														
 			}		
