@@ -88,9 +88,7 @@ public class Juego{
 			System.out.println(ConsoleColors.GREEN + "Eso es todo");
 		}
 
-		System.out.println(ConsoleColors.RESET);
-			
-
+		System.out.println(ConsoleColors.RESET);			
 	}
 
 	public static void imprimirGraficoBandera(String[] banderas, int indice)
@@ -162,6 +160,7 @@ public class Juego{
 						{
 							indice_bandera = indiceAleatorio.nextInt(indices.length);
 							opcion_bandera = indice_bandera;
+
 							for (int i=0;i<indices.length ;i++ )
 							{
 								if(i==indice_bandera)
@@ -186,6 +185,7 @@ public class Juego{
 								System.out.println("1. Si");
 								System.out.println("2. No");
 								String pregunta_usuario = ConsoleInput.getString();
+
 								if(pregunta_usuario.equalsIgnoreCase("No"))
 								{
 									break;
@@ -197,8 +197,7 @@ public class Juego{
 							}														
 						}
 						puntaje_juego=0;
-						break;
-						
+						break;						
 				case 2: creditos();
        					break;
        			case 3: System.out.println("Adios :)");
@@ -207,7 +206,6 @@ public class Juego{
 			}			
 
 		}while(centinela!=3);
-
 	}
 	public static void main(String args[]){
 		juego();
