@@ -26,23 +26,6 @@ public class Juego{
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
-	public static void imprimirInformacionBandera(String[] banderas,int indice)
-	{
-		String fila[];
-
-		for (int i=indice;i<indice+20;i++ ) {
-			if(i == indice)
-			{
-				fila = banderas[i].split(";");
-				System.out.println("Nombre pais: "+fila[0]);
-				/*System.out.println("Capital: "+fila[1]);
-				System.out.println("Idioma: "+fila[2]);*/
-			}
-			else{
-				System.out.println(banderas[i]);
-			}
-		}
-	}
 	public static void juegoInformacionBandera(String[] banderas,int indice)
 	{
 		String fila[];
