@@ -60,13 +60,13 @@ public class Juego{
 				respuesta.toLowerCase();
 				if(respuesta.equalsIgnoreCase(fila[0]))
 				{
-					System.out.println(ConsoleColors.GREEN + "Bien");	
+					System.out.println(ConsoleColors.GREEN + "Muy bien");	
 					prueba=true;				
 					
 				}else
 				{
-					System.out.println(ConsoleColors.RED + "Mal");
-					System.out.println("La respuesta es: " + fila[0].toLowerCase());
+					System.out.println(ConsoleColors.RED + ":(");
+					System.out.println("La respuesta correcta es: " + fila[0].toLowerCase());
 					System.out.println(ConsoleColors.RESET);
 				}	
 			}
