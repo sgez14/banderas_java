@@ -26,11 +26,11 @@ public class Juego{
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
-	public static void juegoInformacionBandera(String[] banderas,int indice, int puntaje)
+	public static boolean juegoInformacionBandera(String[] banderas,int indice)
 	{
 		String fila[];
 		String respuesta = ConsoleInput.getString();
-
+		boolean prueba = false;
 		for (int i=indice;i<indice+20;i++ ) {
 			if(i == indice)
 			{
@@ -40,16 +40,20 @@ public class Juego{
 				respuesta.toLowerCase();
 				if(respuesta.equalsIgnoreCase(fila[0]))
 				{
-					System.out.println("Bien");
-					puntaje++;
+					System.out.println(ConsoleColors.GREEN + "Bien");	
+					prueba=true;				
+					
 				}else
 				{
-					System.out.println("Mal");
+					System.out.println(ConsoleColors.RED + "Mal");
 					System.out.println("La respuesta es: " + fila[0].toLowerCase());
+					System.out.println(ConsoleColors.RESET)
 				}	
 			}
 		}
+		return prueba;				
 	}
+
 	public static void imprimirGraficoBandera(String[] banderas, int indice)
 	{
 		for (int i=indice;i<indice+20;i++ ) {
@@ -71,13 +75,12 @@ public class Juego{
 	{
 		boolean control;
 		String respuesta;
-		int puntaje = 0, opcion_bandera = 0, centinela=0;
+		int puntaje_juego = 0, opcion_bandera = 0, centinela=0;
+		boolean bandera = false;
 		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 		int indices[] = crearIndices(banderas.length/20);
 		Random indiceAleatorio = new Random();
 		int indice_bandera;
-		/*System.out.println(Arrays.toString(indices)); Imprime los indices */
-
 		do
 		{
 			System.out.println();
@@ -90,18 +93,32 @@ public class Juego{
 			switch(centinela)
 			{
 				case 1: System.out.println();
-						indice_bandera = indiceAleatorio.nextInt(indices.length);
-						opcion_bandera = indice_bandera; 		   					
-						imprimirGraficoBandera(banderas,indices[opcion_bandera]);
-						for (int i=0;i<indices.length ;i++ )
+						while(puntaje_juego<3)
 						{
-							if(i==indice_bandera)
+							indice_bandera = indiceAleatorio.nextInt(indices.length);
+							opcion_bandera = indice_bandera;
+							for (int i=0;i<indices.length ;i++ )
 							{
-								System.out.println();
-								System.out.println("Adivina la bandera");
-								juegoInformacionBandera(banderas,indices[opcion_bandera],puntaje);
-							}							
-						}														
+								if(i==indice_bandera)
+								{
+									System.out.println();
+									System.out.println("Adivina la bandera :)");
+									imprimirGraficoBandera(banderas,indices[opcion_bandera]);
+									bandera=juegoInformacionBandera(banderas,indices[opcion_bandera]);
+									if(bandera==true)
+									{
+										puntaje_juego++;
+									}else
+									{
+										System.out.println("Adivina 3 banderas para ganar");
+									}
+									if(puntaje_juego==2)
+									{
+										System.out.println(ConsoleColors.CYAN + "Ya casi ganas!");
+									}
+								}							
+							}
+						}		  																										
 			}		
 
 		}while(centinela!=3);
