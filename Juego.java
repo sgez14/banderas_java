@@ -113,25 +113,26 @@ public class Juego{
 	public static void creditos()
 	{
 		System.out.println();
-		System.out.println("  /$$$$$$                          /$$           ");
-       	System.out.println(" /$$__  $$                        |__/           ");
-       	System.out.println("| $$  \\__/  /$$$$$$  /$$$$$$/$$$$  /$$  /$$$$$$  ");
-       	System.out.println("|  $$$$$$  |____  $$| $$_  $$_  $$| $$ /$$__  $$ ");
-       	System.out.println(" \\____  $$  /$$$$$$$| $$ \\ $$ \\ $$| $$| $$  \\__/ ");
-       	System.out.println(" /$$  \\ $$ /$$__  $$| $$ | $$ | $$| $$| $$       ");
-       	System.out.println("|  $$$$$$/|  $$$$$$$| $$ | $$ | $$| $$| $$       ");
-       	System.out.println(" \\______/  \\_______/|__/ |__/ |__/|__/|__/       ");
-       	System.out.println("                                                 ");
+		System.out.println(ConsoleColors.CYAN + "  /$$$$$$                          /$$           ");
+       	System.out.println(ConsoleColors.CYAN + " /$$__  $$                        |__/           ");
+       	System.out.println(ConsoleColors.CYAN + "| $$  \\__/  /$$$$$$  /$$$$$$/$$$$  /$$  /$$$$$$  ");
+       	System.out.println(ConsoleColors.CYAN + "|  $$$$$$  |____  $$| $$_  $$_  $$| $$ /$$__  $$ ");
+       	System.out.println(ConsoleColors.CYAN + " \\____  $$  /$$$$$$$| $$ \\ $$ \\ $$| $$| $$  \\__/ ");
+       	System.out.println(ConsoleColors.CYAN + " /$$  \\ $$ /$$__  $$| $$ | $$ | $$| $$| $$       ");
+       	System.out.println(ConsoleColors.CYAN + "|  $$$$$$/|  $$$$$$$| $$ | $$ | $$| $$| $$       ");
+       	System.out.println(ConsoleColors.CYAN + " \\______/  \\_______/|__/ |__/ |__/|__/|__/       ");
+       	System.out.println(ConsoleColors.CYAN + "                                                 ");
 	
 	
-       	System.out.println(" $$\\   $$\\                         $$\\                            ");
-       	System.out.println(" $$ |  $$ |                        $$ |                           ");
-       	System.out.println(" $$ |  $$ |$$\\   $$\\ $$$$$$\\$$$$\\  $$$$$$$\\   $$$$$$\\   $$$$$$\\   ");
-       	System.out.println(" $$$$$$$$ |$$ |  $$ |$$  _$$  _$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\  ");
-       	System.out.println(" $$  __$$ |$$ |  $$ |$$ / $$ / $$ |$$ |  $$ |$$$$$$$$ |$$ |  \\__| ");
-       	System.out.println(" $$ |  $$ |$$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$   ____|$$ |       ");
-       	System.out.println(" $$ |  $$ |\\$$$$$$  |$$ | $$ | $$ |$$$$$$$  |\\$$$$$$$\\ $$ |       ");
-       	System.out.println(" \\__|  \\__| \\______/ \\__| \\__| \\__|\\_______/  \\_______|\\__|       ");
+       	System.out.println(ConsoleColors.PURPLE + " $$\\   $$\\                         $$\\                            ");
+       	System.out.println(ConsoleColors.PURPLE + " $$ |  $$ |                        $$ |                           ");
+       	System.out.println(ConsoleColors.PURPLE + " $$ |  $$ |$$\\   $$\\ $$$$$$\\$$$$\\  $$$$$$$\\   $$$$$$\\   $$$$$$\\   ");
+       	System.out.println(ConsoleColors.PURPLE + " $$$$$$$$ |$$ |  $$ |$$  _$$  _$$\\ $$  __$$\\ $$  __$$\\ $$  __$$\\  ");
+       	System.out.println(ConsoleColors.PURPLE + " $$  __$$ |$$ |  $$ |$$ / $$ / $$ |$$ |  $$ |$$$$$$$$ |$$ |  \\__| ");
+       	System.out.println(ConsoleColors.PURPLE + " $$ |  $$ |$$ |  $$ |$$ | $$ | $$ |$$ |  $$ |$$   ____|$$ |       ");
+       	System.out.println(ConsoleColors.PURPLE + " $$ |  $$ |\\$$$$$$  |$$ | $$ | $$ |$$$$$$$  |\\$$$$$$$\\ $$ |       ");
+       	System.out.println(ConsoleColors.PURPLE + " \\__|  \\__| \\______/ \\__| \\__| \\__|\\_______/  \\_______|\\__|       ");
+       	System.out.println(ConsoleColors.RESET);
 	}
 
 	public static void juego()
@@ -147,10 +148,11 @@ public class Juego{
 		do
 		{
 			System.out.println();
-			System.out.println("Ingrese una opcion: ");
-			System.out.println("1. Jugar");
-			System.out.println("2. Ver creditos");
-			System.out.println("3. Salir");
+			System.out.println(ConsoleColors.YELLOW + "Ingrese una opcion: ");
+			System.out.println(ConsoleColors.GREEN + "1. Jugar");
+			System.out.println(ConsoleColors.PURPLE + "2. Ver creditos");
+			System.out.println(ConsoleColors.RED + "3. Salir");
+			System.out.println(ConsoleColors.RESET);
 			centinela = ConsoleInput.getInt();
 
 			switch(centinela)
