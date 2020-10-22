@@ -135,7 +135,6 @@ public class Juego{
 
 	public static void juego()
 	{
-		boolean control;
 		String respuesta;
 		int puntaje_juego = 0, opcion_bandera = 0, centinela=0;
 		boolean bandera = false;
