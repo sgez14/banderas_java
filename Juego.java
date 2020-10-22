@@ -191,10 +191,6 @@ public class Juego{
 								{
 									break;
 								}
-								else
-								{
-									System.out.println();
-								}
 							}														
 						}
 						puntaje_juego=0;
