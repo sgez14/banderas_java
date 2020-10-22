@@ -200,7 +200,7 @@ public class Juego{
 						break;						
 				case 2: creditos();
        					break;
-       			case 3: System.out.println("Adios :)");
+       			case 3: System.out.println(ConsoleColors.CYAN + "Adios :)");
        					break;
        			default: System.out.println("Opcion invalida");	  																										
 			}			
