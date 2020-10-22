@@ -167,6 +167,7 @@ public class Juego{
 								{
 									System.out.println();
 									System.out.println("Adivina la bandera :)");
+									System.out.println("Recuerda que no se pueden usar caracteres especiales");
 									imprimirGraficoBandera(banderas,indices[opcion_bandera]);
 									bandera=juegoInformacionBandera(banderas,indices[opcion_bandera]);
 									if(bandera==true)
